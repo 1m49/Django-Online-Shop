@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     # local apps
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
+    'products.apps.ProductsConfig',
 
     # third part
     'allauth',
@@ -151,4 +152,4 @@ LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_UNIQUE_EMAIL = TrueG
+ACCOUNT_UNIQUE_EMAIL = True
