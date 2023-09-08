@@ -47,3 +47,7 @@ class Cart:
 
         for item in cart.values():
             yield item
+
+    # count the number of products
+    def __len__(self):
+        return len(self.cart.keys())
