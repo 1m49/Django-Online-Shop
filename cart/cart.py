@@ -51,3 +51,8 @@ class Cart:
     # count the number of products
     def __len__(self):
         return len(self.cart.keys())
+
+    # Delete all products from the shopping cart
+    def clear(self):
+        del self.session['cart']
+        self.save()
