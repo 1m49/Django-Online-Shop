@@ -56,3 +56,9 @@ class Cart:
     def clear(self):
         del self.session['cart']
         self.save()
+
+    # Calculate the total price of the products in the cart
+    def get_total_price(self):
+        product_ids = self.cart.keys()
+        products = Product.objects.filter(id__in=product_ids)
+        return sum(product.price for product in products)
