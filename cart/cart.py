@@ -3,8 +3,12 @@ from products.models import Product
 
 class Cart:
     # Initialize the cart
-    def __int__(self, request):
+    def __init__(self, request):
+        """
+        Initialize the cart
+        """
         self.request = request
+
         self.session = request.session
 
         cart = self.session.get('cart')
