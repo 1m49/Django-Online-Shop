@@ -22,17 +22,17 @@ class Product(models.Model):
 # Product Comment
 class Comment(models.Model):
     PRODUCT_START = [
-        ('1', 'Very Bad'),
-        ('2', 'Bad'),
-        ('3', 'Normal'),
-        ('4', 'Good'),
-        ('5', 'Perfect'),
+        ('1', 'خیلی بد'),
+        ('2', 'بد'),
+        ('3', 'معمولی'),
+        ('4', 'خوب'),
+        ('5', 'خیلی خوب'),
     ]
 
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='comments')
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='comments')
-    body = models.TextField()
-    stars = models.CharField(max_length=10, choices=PRODUCT_START)
+    body = models.TextField(verbose_name='نظر شما')
+    stars = models.CharField(max_length=10, choices=PRODUCT_START , verbose_name='امتیاز')
     active = models.BooleanField(default=True)
 
     datetime_created = models.DateTimeField(auto_now_add=True)
@@ -40,3 +40,6 @@ class Comment(models.Model):
 
     def __str__(self):
         return f'{self.author} , {self.body[:30]}'
+
+    def get_absolute_url(self):
+        return reverse('product_detail', args=[self.product.id])
