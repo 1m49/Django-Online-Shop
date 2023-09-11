@@ -19,11 +19,14 @@ class Cart:
         self.cart = cart
 
     # add product to cart
-    def add(self, product, quantity=1):
+    def add(self, product, quantity=1, replace_current_quantity=False):
         product_id = str(product.id)
 
         if product.id not in self.cart:
-            self.cart[product_id] = {'quantity': quantity}
+            self.cart[product_id] = {'quantity': 0}
+
+        if replace_current_quantity:
+            self.cart[product_id]['quantity'] = quantity
         else:
             self.cart[product_id]['quantity'] += quantity
 
@@ -42,7 +45,7 @@ class Cart:
     # Looping through shopping cart items
     def __iter__(self):
         product_ids = self.cart.keys()
-        products = Product.objects.fileter(id__in=product_ids)
+        products = Product.objects.filter(id__in=product_ids)
 
         cart = self.cart.copy()
 

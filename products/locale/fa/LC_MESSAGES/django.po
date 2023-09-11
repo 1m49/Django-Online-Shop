@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-08 17:16+0330\n"
-"PO-Revision-Date: 2023-09-08 17:19+0330\n"
+"POT-Creation-Date: 2023-09-10 21:07+0330\n"
+"PO-Revision-Date: 2023-09-10 21:07+0330\n"
 "Last-Translator:   <iman@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,14 +19,18 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.9.9\n"
 
-#: .\templates\products\product_detail.html:163
+#: .\templates\products\product_detail.html:152
+msgid "Add to cart"
+msgstr "اضافه کردن به سبد خرید"
+
+#: .\templates\products\product_detail.html:176
 msgid "product detail"
 msgstr "جزئیات محصول"
 
-#: .\templates\products\product_detail.html:166
+#: .\templates\products\product_detail.html:180
 msgid "property"
 msgstr "ویژگی ها"
 
-#: .\templates\products\product_detail.html:169
+#: .\templates\products\product_detail.html:184
 msgid "comments"
 msgstr "نظرات"
