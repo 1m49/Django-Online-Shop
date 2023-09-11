@@ -16,6 +16,7 @@ def cart_detail(request):
     return render(request, 'cart/cart_detail.html', {'cart': cart})
 
 
+# add product to cart
 def add_to_cart(request, product_id):
     cart = Cart(request)
 
@@ -28,3 +29,14 @@ def add_to_cart(request, product_id):
         cart.add(product, quantity, replace_current_quantity=cleaned_data['inplace'])
 
         return redirect('cart:cart_detail')
+
+
+# remove product from cart
+def remove_from_cart(request, product_id):
+    cart = Cart(request)
+
+    product = get_object_or_404(Product, pk=product_id)
+
+    cart.remove(product)
+
+    return redirect('cart:cart_detail')
