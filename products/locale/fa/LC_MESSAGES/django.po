@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-11 21:26+0330\n"
-"PO-Revision-Date: 2023-09-11 21:31+0330\n"
+"POT-Creation-Date: 2023-09-11 21:42+0330\n"
+"PO-Revision-Date: 2023-09-11 21:43+0330\n"
 "Last-Translator:   <iman@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -20,7 +20,6 @@ msgstr ""
 "X-Translated-Using: django-rosetta 0.9.9\n"
 
 #: .\templates\products\product_detail.html:7
-#| msgid "product detail"
 msgid "detail"
 msgstr "جزئیات"
 
@@ -77,13 +76,21 @@ msgstr "رنگ"
 msgid "Comment for"
 msgstr "نظر برای"
 
-#: .\templates\products\product_detail.html:177
+#: .\templates\products\product_detail.html:179
 msgid "Write your comment"
 msgstr "نظر خود را بنویسید"
 
-#: .\templates\products\product_detail.html:184
+#: .\templates\products\product_detail.html:187
 msgid "Register a comment"
 msgstr "ثبت نظر"
+
+#: .\templates\products\product_detail.html:190
+msgid "You must first login to register comment"
+msgstr "برای ثبت نظر ابتدا لاگین کنید"
+
+#: .\templates\products\product_detail.html:192
+msgid "Click here"
+msgstr "اینجا کلیک کن"
 
 #: .\views.py:42
 msgid "Your comment has been successfully registered"
