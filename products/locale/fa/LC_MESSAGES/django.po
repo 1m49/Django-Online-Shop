@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-11 19:12+0330\n"
-"PO-Revision-Date: 2023-09-11 19:21+0330\n"
+"POT-Creation-Date: 2023-09-11 21:26+0330\n"
+"PO-Revision-Date: 2023-09-11 21:31+0330\n"
 "Last-Translator:   <iman@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,9 +19,39 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.9.9\n"
 
+#: .\templates\products\product_detail.html:7
+#| msgid "product detail"
+msgid "detail"
+msgstr "جزئیات"
+
+#: .\templates\products\product_detail.html:23
 #: .\templates\products\product_detail.html:88
 msgid "product detail"
 msgstr "جزئیات محصول"
+
+#: .\templates\products\product_detail.html:65
+msgid "Add to cart"
+msgstr "اضافه کردن به سبد خرید"
+
+#: .\templates\products\product_detail.html:72
+msgid "Categories"
+msgstr "دسته بندی ها"
+
+#: .\templates\products\product_detail.html:73
+msgid "clothes"
+msgstr "لباس ها"
+
+#: .\templates\products\product_detail.html:74
+msgid "summer"
+msgstr "تابستانی"
+
+#: .\templates\products\product_detail.html:75
+msgid "hot"
+msgstr "گرم"
+
+#: .\templates\products\product_detail.html:76
+msgid "feminine"
+msgstr "زنانه"
 
 #: .\templates\products\product_detail.html:92
 msgid "property"
@@ -31,9 +61,30 @@ msgstr "ویژگی ها"
 msgid "comments"
 msgstr "نظرات"
 
+#: .\templates\products\product_detail.html:115
+msgid "weight"
+msgstr "وزن"
+
+#: .\templates\products\product_detail.html:119
+msgid "size"
+msgstr "سایز"
+
+#: .\templates\products\product_detail.html:123
+msgid "color"
+msgstr "رنگ"
+
+#: .\templates\products\product_detail.html:138
+msgid "Comment for"
+msgstr "نظر برای"
+
+#: .\templates\products\product_detail.html:177
+msgid "Write your comment"
+msgstr "نظر خود را بنویسید"
+
+#: .\templates\products\product_detail.html:184
+msgid "Register a comment"
+msgstr "ثبت نظر"
+
 #: .\views.py:42
 msgid "Your comment has been successfully registered"
 msgstr "نظر شما با موفقیت ثبت شد"
-
-#~ msgid "Add to cart"
-#~ msgstr "اضافه کردن به سبد خرید"

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-11 19:20+0330\n"
-"PO-Revision-Date: 2023-09-11 19:20+0330\n"
+"POT-Creation-Date: 2023-09-11 21:10+0330\n"
+"PO-Revision-Date: 2023-09-11 21:18+0330\n"
 "Last-Translator:   <iman@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,18 +19,62 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.9.9\n"
 
-#: .\templates\cart\cart_detail.html:66
+#: .\templates\cart\cart_detail.html:4
+msgid "cart"
+msgstr "سبد خرید"
+
+#: .\templates\cart\cart_detail.html:29
+msgid "product picture"
+msgstr "عکس محصول"
+
+#: .\templates\cart\cart_detail.html:30
+msgid "product name"
+msgstr "نام محصول"
+
+#: .\templates\cart\cart_detail.html:31
+msgid "price"
+msgstr "قیمت"
+
+#: .\templates\cart\cart_detail.html:32
+msgid "quantity"
+msgstr "مقدار"
+
+#: .\templates\cart\cart_detail.html:33 .\templates\cart\cart_detail.html:102
+msgid "total"
+msgstr "مجموع"
+
+#: .\templates\cart\cart_detail.html:52 .\templates\cart\cart_detail.html:75
+#: .\templates\cart\cart_detail.html:110
+msgid "$"
+msgstr "تومان"
+
+#: .\templates\cart\cart_detail.html:69
 msgid "update"
 msgstr "بروزرسانی"
 
-#: .\views.py:19
-msgid "The price has been successfully updated"
-msgstr "قیمت با موفقیت بروزرسانی شد"
+#: .\templates\cart\cart_detail.html:86
+msgid "there is no product yet"
+msgstr "هنوز هیچ محصولی وجود ندارد"
 
-#: .\views.py:37
+#: .\templates\cart\cart_detail.html:87
+msgid "Go to shop"
+msgstr "برو به فروشگاه"
+
+#: .\templates\cart\cart_detail.html:95
+msgid "Empty the shopping cart"
+msgstr "سبد خرید خالی است"
+
+#: .\templates\cart\cart_detail.html:118
+msgid "Order"
+msgstr "ثبت سفارش"
+
+#: .\views.py:36
 msgid "Product added successfully "
 msgstr "محصول با موفقیت اضافه شد"
 
-#: .\views.py:50
+#: .\views.py:49
 msgid "Product removed successfully "
 msgstr "محصول با موفقیت حذف شد"
+
+#~ msgid "The price has been successfully updated"
+#~ msgstr "قیمت با موفقیت بروزرسانی شد"

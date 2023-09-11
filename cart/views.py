@@ -16,7 +16,6 @@ def cart_detail(request):
             'quantity': item['quantity'],
             'inplace': True,
         })
-    messages.success(request, _('The price has been successfully updated'), 'success')
 
     return render(request, 'cart/cart_detail.html', {'cart': cart})
 
