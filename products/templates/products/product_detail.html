@@ -2,6 +2,8 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% load i18n %}
+{% load jalali_tags %}
+
 
 
 {% block title %} {% trans 'detail' %} {% endblock %}
@@ -149,10 +151,10 @@
                                                                     <img src="{% static 'img/others/comment-1.jpg' %}"
                                                                          alt="Review Avatar" class="review__avatar">
                                                                     <div>
-                                                                        <div class="review__meta">
+                                                                        <div class="review__meta m-2">
                                                                             <strong class="review__author px-4">{{ comment.author.username }}</strong>
                                                                             <span class="review__dash">-</span>
-                                                                            <span class="review__published-date">{{ comment.datetime_created }}</span>
+                                                                            <span class="review__published-date">{{ comment.datetime_created|to_jalali:'%Y/%m/%d _ %H:%M:%S' }}</span>
                                                                         </div>
                                                                         <div class="product-rating m-2">
                                                                             <div class="m-0 p-2">

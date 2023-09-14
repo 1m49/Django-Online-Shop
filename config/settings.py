@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
 
     # third part
+    'jalali_date',
     'allauth',
     'allauth.account',
     'crispy_forms',

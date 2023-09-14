@@ -1,16 +1,17 @@
 from django.db import models
 from django.shortcuts import reverse
 from django.contrib.auth import get_user_model
+from django.utils import timezone
 
 
 class Product(models.Model):
     title = models.CharField(max_length=150)
     description = models.TextField()
-    image = models.ImageField(upload_to='product/product_pic' , blank=True)
+    image = models.ImageField(upload_to='product/product_pic', blank=True)
     price = models.PositiveIntegerField(default=0)
     active = models.BooleanField(default=True)
 
-    datetime_created = models.DateTimeField(auto_now_add=True)
+    datetime_created = models.DateTimeField(default=timezone.now)
     datetime_modified = models.DateTimeField(auto_now=True)
 
     def __str__(self):
@@ -33,7 +34,7 @@ class Comment(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='comments')
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='comments')
     body = models.TextField(verbose_name='نظر شما')
-    stars = models.CharField(max_length=10, choices=PRODUCT_START , verbose_name='امتیاز')
+    stars = models.CharField(max_length=10, choices=PRODUCT_START, verbose_name='امتیاز')
     active = models.BooleanField(default=True)
 
     datetime_created = models.DateTimeField(auto_now_add=True)
