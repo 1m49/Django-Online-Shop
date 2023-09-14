@@ -6,6 +6,7 @@ from django.contrib.auth import get_user_model
 class Product(models.Model):
     title = models.CharField(max_length=150)
     description = models.TextField()
+    image = models.ImageField(upload_to='product/product_pic' , blank=True)
     price = models.PositiveIntegerField(default=0)
     active = models.BooleanField(default=True)
 

@@ -22,7 +22,7 @@ class Cart:
     def add(self, product, quantity=1, replace_current_quantity=False):
         product_id = str(product.id)
 
-        if product.id not in self.cart:
+        if product_id not in self.cart:
             self.cart[product_id] = {'quantity': 0}
 
         if replace_current_quantity:
