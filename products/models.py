@@ -2,17 +2,18 @@ from django.db import models
 from django.shortcuts import reverse
 from django.contrib.auth import get_user_model
 from django.utils import timezone
+from django.utils.translation import gettext_lazy as _
 
 
 class Product(models.Model):
-    title = models.CharField(max_length=150)
-    description = models.TextField()
-    image = models.ImageField(upload_to='product/product_pic', blank=True)
-    price = models.PositiveIntegerField(default=0)
-    active = models.BooleanField(default=True)
+    title = models.CharField(_('title'), max_length=150)
+    description = models.TextField(_('description of product'))
+    image = models.ImageField(_('product picture'), upload_to='product/product_pic', blank=True)
+    price = models.PositiveIntegerField(_('price'), default=0)
+    active = models.BooleanField(_('active'), default=True)
 
-    datetime_created = models.DateTimeField(default=timezone.now)
-    datetime_modified = models.DateTimeField(auto_now=True)
+    datetime_created = models.DateTimeField(_('DateTime Created'), default=timezone.now)
+    datetime_modified = models.DateTimeField(_('DateTime Modified'), auto_now=True)
 
     def __str__(self):
         return self.title
@@ -24,21 +25,22 @@ class Product(models.Model):
 # Product Comment
 class Comment(models.Model):
     PRODUCT_START = [
-        ('1', 'خیلی بد'),
-        ('2', 'بد'),
-        ('3', 'معمولی'),
-        ('4', 'خوب'),
-        ('5', 'خیلی خوب'),
+        ('1', _('very bad')),
+        ('2', _('bad')),
+        ('3', _('normal')),
+        ('4', _('good')),
+        ('5', _('very good')),
     ]
 
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='comments')
-    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='comments')
-    body = models.TextField(verbose_name='نظر شما')
-    stars = models.CharField(max_length=10, choices=PRODUCT_START, verbose_name='امتیاز')
-    active = models.BooleanField(default=True)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='comments', verbose_name=_('product'))
+    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='comments',
+                               verbose_name=_('author'))
+    body = models.TextField(_('comment'))
+    stars = models.CharField(_('stars'), max_length=10, choices=PRODUCT_START)
+    active = models.BooleanField(_('active'), default=True)
 
-    datetime_created = models.DateTimeField(auto_now_add=True)
-    datetime_modified = models.DateTimeField(auto_now=True)
+    datetime_created = models.DateTimeField(_('DateTime Created'), auto_now_add=True)
+    datetime_modified = models.DateTimeField(_('DateTime Modified'), auto_now=True)
 
     def __str__(self):
         return f'{self.author} , {self.body[:30]}'
