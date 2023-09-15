@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 {% load i18n %}
 {% load jalali_tags %}
-
+{% load persian_translation_tags %}
 
 
 {% block title %} {% trans 'detail' %} {% endblock %}
@@ -97,7 +97,7 @@
                                     </a>
                                     <a class="m-0 product-data-tab__link nav-link" id="nav-reviews-tab"
                                        data-toggle="tab" href="#nav-reviews" role="tab" aria-selected="true">
-                                        <span>{% trans 'comments' %} ({{ product.comments.count }})</span>
+                                        <span>{% trans 'comments' %} ({{ product.comments.count|translate_number }})</span>
                                     </a>
                                 </div>
                                 <div class="tab-content product-data-tab__content" id="product-tabContent">
@@ -154,7 +154,7 @@
                                                                         <div class="review__meta m-2">
                                                                             <strong class="review__author px-4">{{ comment.author.username }}</strong>
                                                                             <span class="review__dash">-</span>
-                                                                            <span class="review__published-date">{{ comment.datetime_created|to_jalali:'%Y/%m/%d _ %H:%M:%S' }}</span>
+                                                                            <span class="review__published-date">{{ comment.datetime_created|to_jalali:'%Y/%m/%d _ %H:%M:%S'|translate_number }}</span>
                                                                         </div>
                                                                         <div class="product-rating m-2">
                                                                             <div class="m-0 p-2">
