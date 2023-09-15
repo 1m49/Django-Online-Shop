@@ -97,7 +97,7 @@
                                     </a>
                                     <a class="m-0 product-data-tab__link nav-link" id="nav-reviews-tab"
                                        data-toggle="tab" href="#nav-reviews" role="tab" aria-selected="true">
-                                        <span>{% trans 'comments' %} ({{ product.comments.count|translate_number }})</span>
+                                        <span>{% trans 'comments' %} ({{ product.comments.count|translate_number|number_separator }})</span>
                                     </a>
                                 </div>
                                 <div class="tab-content product-data-tab__content" id="product-tabContent">
