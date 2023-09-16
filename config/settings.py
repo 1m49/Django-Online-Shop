@@ -28,7 +28,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.forms',
 
     # third part
     'ckeditor',
@@ -45,6 +44,7 @@ INSTALLED_APPS = [
     'products.apps.ProductsConfig',
     'cart.apps.CartConfig',
     'persian_translation.apps.PersianTranslationConfig',
+    'orders.apps.OrdersConfig',
 
 ]
 
