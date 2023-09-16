@@ -28,6 +28,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.forms',
+
+    # third part
+    'ckeditor',
+    'jalali_date',
+    'allauth',
+    'allauth.account',
+    'crispy_forms',
+    'crispy_bootstrap5',
+    'rosetta',
 
     # local apps
     'accounts.apps.AccountsConfig',
@@ -35,14 +45,6 @@ INSTALLED_APPS = [
     'products.apps.ProductsConfig',
     'cart.apps.CartConfig',
     'persian_translation.apps.PersianTranslationConfig',
-
-    # third part
-    'jalali_date',
-    'allauth',
-    'allauth.account',
-    'crispy_forms',
-    'crispy_bootstrap5',
-    'rosetta',
 
 ]
 
@@ -148,6 +150,7 @@ STATIC_URL = 'assets/'
 STATICFILES_DIRS = [
     BASE_DIR / 'assets',
 ]
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Media
 MEDIA_URL = '/media/'
@@ -171,3 +174,19 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
+
+# CKEDITOR
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+
+CKEDITOR_CONFIGS = {
+    'default':
+        {
+            'toolbar': 'full',
+            'width': 'auto',
+            'extraPlugins': ','.join([
+                'codesnippet',
+            ]),
+        },
+}
