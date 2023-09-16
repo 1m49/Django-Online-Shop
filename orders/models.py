@@ -21,4 +21,11 @@ class Order(models.Model):
         return f'Order {self.id}'
 
 
+class OrderItem(models.Model):
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='orders')
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='order_items')
+    quantity = models.PositiveIntegerField(default=1)
+    price = models.PositiveIntegerField()
 
+    def __str__(self):
+        return f'order {self.id} from product {self.product}'
