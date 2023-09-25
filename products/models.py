@@ -12,8 +12,8 @@ class Product(models.Model):
     short_description = models.CharField(_('short description'), max_length=500, blank=True)
     description = RichTextUploadingField(_('description of product'))
     image = models.ImageField(_('product picture'), upload_to='product/product_pic', blank=True)
-    old_price = models.PositiveIntegerField(_('old price'), blank=True)
-    price = models.PositiveIntegerField(_('price'), default=0)
+    old_price = models.PositiveIntegerField(_('old price'))
+    price = models.PositiveIntegerField(_('price'), default=0, blank=True)
     active = models.BooleanField(_('active'), default=True)
 
     datetime_created = models.DateTimeField(_('DateTime Created'), default=timezone.now)

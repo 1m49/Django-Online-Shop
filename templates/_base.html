@@ -1,14 +1,12 @@
 {% load static %}
-{% load persian_translation_tags %}
+{% load i18n %}
 
-<!doctype html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block title %} {% endblock %}</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>{% block page_title %}{% endblock %}</title>
+
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
@@ -27,94 +25,23 @@
 
     <!-- style css -->
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
-
 </head>
 
 
-<body dir="rtl">
 
 
-{% include 'inc/header.html' %}
-{% include 'inc/messages.html' %}
-<!-- Header End -->
+<body dir='rtl'>
 
+{% include 'header.html' %}
+
+{% include 'messages.html' %}
 
 
 {% block main %}
 
-
-
 {% endblock %}
 
-
-{% include 'inc/footer.html' %}
-
-<!-- Search form Popup Start -->
-<div class="searchform__popup" id="searchForm">
-    <a href="#" class="btn-close"><i class="flaticon flaticon-cross"></i></a>
-    <div class="searchform__body">
-        <p>Start typing and press Enter to search</p>
-        <form class="searchform">
-            <input type="text" name="popup-search" id="popup-search" class="searchform__input"
-                   placeholder="Search Entire Store...">
-            <button type="submit" class="searchform__submit"><i
-                    class="flaticon flaticon-magnifying-glass-icon"></i></button>
-        </form>
-    </div>
-</div>
-<!-- Search form Popup End -->
-
-
-    <!-- Mini Cart Start -->
-    <aside class="mini-cart" id="miniCart">
-        <div class="mini-cart-wrapper">
-            <a href="" class="btn-close"><i class="flaticon flaticon-cross"></i></a>
-            <div class="mini-cart-inner">
-                <h3 class="mini-cart__heading mb--40 mb-lg--30 text-right"></h3>
-                <div class="mini-cart__content">
-                    <ul class="mini-cart__list text-right">
-
-                        {% for item in cart %}
-                            <li class="mini-cart__product d-flex justify-content-between">
-                                <div class="mini-cart__product__image">
-                                    <a href="#">
-                                        <img src="{% static 'img/products/prod-1-100x100.jpg' %}">
-                                    </a>
-                                </div>
-                                <div class="mini-cart__product__content pt-2">
-                                    <span class="mini-cart__product__title d-flex flex-row justify-content-between">
-                                        <a href="#">{{ item.product_obj.title }}</a>
-                                        <a href="#" class="">
-                                            &#10060;
-                                        </a>
-                                    </span>
-                                    <span class="mini-cart__product__quantity">
-                                        <span>{{ item.product_obj.price|translate_number }} تومان</span> &#215; <span>{{ item.quantity|translate_number }}</span>
-                                    </span>
-                                </div>
-                            </li>
-                        {% endfor %}
-
-                    </ul>
-                    <div class="mini-cart__total">
-                        <span>جمع کل</span>
-                        <span class="ammount">{{ cart.get_total_price|translate_number }} تومان </span>
-                    </div>
-                    <div class="mini-cart__buttons">
-                        <a href="{% url 'cart:cart_detail' %}" class="btn btn-fullwidth btn-bg-sand mb--20">مشاهده سبد
-                            خرید</a>
-                        <a href="checkout.html" class="btn btn-fullwidth btn-bg-sand">پرداخت</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </aside>
-    <!-- Mini Cart End -->
-
-<!-- Global Overlay Start -->
-<div class="ShoppingYar-global-overlay"></div>
-<!-- Global Overlay End -->
-
+{% include 'footer.html' %}
 
 <!-- ************************* JS Files ************************* -->
 
