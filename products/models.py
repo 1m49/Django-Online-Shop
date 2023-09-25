@@ -4,13 +4,13 @@ from django.contrib.auth import get_user_model
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
-from ckeditor_uploader.fields import RichTextUploadingField
+from ckeditor.fields import RichTextField
 
 
 class Product(models.Model):
     title = models.CharField(_('title'), max_length=150)
     short_description = models.CharField(_('short description'), max_length=500, blank=True)
-    description = RichTextUploadingField(_('description of product'))
+    description = RichTextField(_('description of product'))
     image = models.ImageField(_('product picture'), upload_to='product/product_pic', blank=True)
     old_price = models.PositiveIntegerField(_('old price'))
     price = models.PositiveIntegerField(_('price'), default=0, blank=True)
