@@ -164,8 +164,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Custom user config
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/product/list'
+LOGOUT_REDIRECT_URL = '/product/list'
 
 # all auth config
 # ACCOUNT_SESSION_REMEMBER = True

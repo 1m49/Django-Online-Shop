@@ -4,11 +4,14 @@
     Logout
 {% endblock %}
 
-{% block content %}
-    <h1>Log Out</h1>
-    <h2>Are you sure you want to logout?</h2>
-    <form action="" method="post">
-        {% csrf_token %}
-        <input type="submit" value="Are you sure?">
-    </form>
+{% block main %}
+    <div class="text-center">
+        <h1>Log Out</h1>
+        <h2>Are you sure you want to logout?</h2>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Are you sure?" class="btn btn-danger">
+        </form>
+    </div>
 {% endblock %}
