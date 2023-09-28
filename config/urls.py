@@ -9,6 +9,7 @@ urlpatterns = [
                   path('', include('pages.urls')),
                   path('product/', include('products.urls')),
                   path('cart/', include('cart.urls')),
+                  path('order/', include('orders.urls')),
                   path('ckeditor/', include('ckeditor_uploader.urls')),
 
                   # Rosetta (i18n)

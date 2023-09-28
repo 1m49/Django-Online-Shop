@@ -1,6 +1,8 @@
 {% extends '_base.html' %}
 {% load static %}
 {% load i18n %}
+{% load persian_translation_tags %}
+
 
 {% block title %} {% trans 'cart' %} {% endblock %}
 {% load i18n %}
@@ -50,7 +52,7 @@
                                                     </td>
                                                     <td class="product-price">
                                                             <span class="product-price-wrapper">
-                                                                <span class="money">{{ item.product_obj.price }} {% trans '$' %}</span>
+                                                                <span class="money">{{ item.product_obj.price|translate_number|number_separator }} {% trans '$' %}</span>
                                                             </span>
                                                     </td>
                                                     <td class="product-quantity">
@@ -73,7 +75,7 @@
                                                     </td>
                                                     <td class="product-total-price">
                                                             <span class="product-price-wrapper">
-                                                                <span class="money">{{ item.total_price }} {% trans '$' %}</span>
+                                                                <span class="money">{{ item.total_price|translate_number|number_separator }} {% trans '$' %}</span>
                                                             </span>
                                                     </td>
                                                 </tr>
@@ -110,13 +112,13 @@
                                         </div>
                                         <div class="cart-calculator__item--value">
                                                 <span class="product-price-wrapper">
-                                                    <span class="money">{{ cart.get_total_price }} {% trans '$' %}</span>
+                                                    <span class="money">{{ cart.get_total_price|translate_number|number_separator }} {% trans '$' %}</span>
                                                 </span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="checkout.html"
+                            <a href="{% url 'order:order_create' %}"
                                class="btn btn-fullwidth btn-bg-red btn-color-white btn-hover-2">
                                 {% trans 'Order' %}
                             </a>
