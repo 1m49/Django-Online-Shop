@@ -5,7 +5,7 @@ from products.models import Product
 
 class Order(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    is_paid = models.BooleanField()
+    is_paid = models.BooleanField(default=False)
 
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
