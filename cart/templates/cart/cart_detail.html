@@ -95,10 +95,12 @@
                                 </div>
                             </div>
                             <div class="row no-gutters border-top pt--20 mt--20">
-                                <div class="col-sm-6 text-sm-right">
-                                    <button type="submit"
-                                            class="cart-form__btn">{% trans 'Empty the shopping cart' %}</button>
-                                </div>
+                                {% if  cart.length == 0 %}
+                                    <div class="col-sm-6 text-sm-right">
+                                        <button type="submit"
+                                                class="cart-form__btn">{% trans 'Empty the shopping cart' %}</button>
+                                    </div>
+                                {% endif %}
                             </div>
                         </div>
                         <div class="col-lg-4">
